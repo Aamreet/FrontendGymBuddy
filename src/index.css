@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  width: 90vw;
+  margin-inline: auto;
+  padding: 4px;
+  background-color:#eaf1f9;
+}
+
+.form-container{
+  background-color: #b9cbe04e;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  margin: 5px;
+  padding: 20px;
+}
+
+.header{
+  text-align: center;
+}
