@@ -1,9 +1,20 @@
-import React from "react";
+import { useRef } from "react";
+import useWorkoutsContext from "../hooks/useWorkoutsContext";
 
-const WorkoutForm = ({workoutFormSubmit,title, load, reps}) => {
+const WorkoutForm = () => {
+  const { addWorkoutHandler } = useWorkoutsContext();
+  const title = useRef("");
+  const load = useRef("");
+  const reps = useRef("");
   return (
     <>
-      <form className="flex-item form-container" onSubmit={workoutFormSubmit}>
+      <form
+        className="flex-item form-container"
+        onSubmit={(e) => {
+          e.preventDefault();
+          addWorkoutHandler(title, load, reps);
+        }}
+      >
         <label htmlFor="title">Title:</label>
         <input ref={title} type="text" />
         <label htmlFor="load">Load in kg:</label>

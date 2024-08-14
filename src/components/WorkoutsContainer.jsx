@@ -2,7 +2,7 @@ import React from 'react'
 import Card from './Card';
 import useWorkoutsContext from '../hooks/useWorkoutsContext';
 
-const WorkoutsContainer = ({workoutList, setWorkoutList}) => {
+const WorkoutsContainer = () => {
    const{workouts}= useWorkoutsContext();
   return (
     <>
@@ -13,7 +13,6 @@ const WorkoutsContainer = ({workoutList, setWorkoutList}) => {
                   <Card
                     key={workout._id}
                     workout={workout}
-                    setWorkoutList={setWorkoutList}
                   ></Card>
                 );
               })
