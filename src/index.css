@@ -1,25 +1,117 @@
-*{
+/* Global values */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.container{
-  width: 90vw;
+ul {
+  list-style-type: none;
+}
+input{
+  outline: none;
+  padding: 4px;
+  caret-color: #4997ef;
+}
+/* --------------------------------- */
+
+/*        Genric styles         */
+.container {
+  margin-top: 5px;
+  width: 99%;
+  min-height:89vh;
   margin-inline: auto;
   padding: 4px;
-  background-color:#eaf1f9;
+  background-color: #dde2e8;
 }
 
-.form-container{
-  background-color: #b9cbe04e;
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  border: 2px solid #989a9c5c;
+  border-radius: 4px;
+  padding: 6px;
+  background-color: #4997ef;
+  cursor: pointer;
+}
+
+.btn:hover{
+  opacity: 0.8;
+}
+.btn:active{
+  opacity: 0.6;
+}
+
+.flex-item {
+  /* flex: 0.5; */
+}
+
+/* ------------------------------------------ */
+
+/*  XXXX   */
+
+.sub-container {
+  /* justify-content: space-around; */
+  gap: 40px;
+  background-color: #ccd4dd;
+}
+
+/* ---------------------------------------- */
+
+/*             Related to Header           */
+.header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* ---------------------------------------- */
+
+/*                   Relate to form      */
+.form-container {
+  background-color: #6096d44e;
   display: flex;
   gap: 10px;
   flex-direction: column;
+  /* flex: ; */
+  width: 35%;
   margin: 5px;
   padding: 20px;
 }
 
-.header{
+.btn-container{
   text-align: center;
 }
+
+.add-workout-btn {
+  width: 60%;
+  font-weight: bold;
+}
+
+/* ------------------------------ */
+
+/* Realated to workout card */
+.card-container {
+  padding: 10px;
+  border: 2px solid rgba(158, 150, 150, 0.688);
+  border-radius: 4px;
+  width: 40%;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  justify-content: space-between;
+  width: 80%;
+  box-shadow: 0 0 5px black;
+  padding: 10px;
+}
+
+.trash-icon {
+  cursor: pointer;
+}
+
+/* ------------------------------------------ */
