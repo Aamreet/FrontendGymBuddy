@@ -1,8 +1,10 @@
 import { createContext, useReducer } from "react";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 export const WorkoutsContext = createContext();
 
 const workoutsReducer = (state, action) => {
+  // console.log(action.type);
   switch (action.type) {
     case "SET_WORKOUTS":
       return {
@@ -29,6 +31,7 @@ const WorkoutsContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(workoutsReducer, {
     workouts: [],
   });
+  const {user}= useAuthContext();
 
   /*          workoutHandlers       */
   const addWorkoutHandler = async (title, load, reps) => {
@@ -37,6 +40,7 @@ const WorkoutsContextProvider = ({ children }) => {
         method: "post",
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer ${user.token}`
         },
         body: JSON.stringify({
           title: title.current.value,
@@ -53,7 +57,7 @@ const WorkoutsContextProvider = ({ children }) => {
         payload: data,
       });
     } catch (error) {
-      console.log(errror);
+      console.log(error);
     }
   };
 
@@ -63,6 +67,9 @@ const WorkoutsContextProvider = ({ children }) => {
     try {
       const res = await fetch(`/api/workouts/${_id}`, {
         method: "delete",
+        headers: {
+          'Authorization': `Bearer ${user.token}`
+        }
       });
       if (!res.ok) {
         throw new Error("Failed to delete workout");

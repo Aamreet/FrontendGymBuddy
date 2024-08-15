@@ -5,21 +5,46 @@
   box-sizing: border-box;
 }
 
+:root {
+  --c1: #ff0097;
+  --link: 		#699fd0;
+  --error: 	#ff3333;
+  --primary: #4997ef;
+  --secondary:  #4db34d;
+}
+
 ul {
   list-style-type: none;
 }
-input{
+
+input {
   outline: none;
-  padding: 4px;
+  padding: 8px;
   caret-color: #4997ef;
+  border: 1px solid rgba(104, 97, 97, 0.458);
+  border-radius: 4px;
 }
+
+a {
+  text-decoration: none;
+  /* color: 	#7acec2; */
+  color: var(--link);
+}
+a:hover{
+  text-shadow: 0 0  2px var(--link);
+  opacity: 0.9;
+}
+a:active{
+  opacity: 0.7;
+}
+
 /* --------------------------------- */
 
 /*        Genric styles         */
 .container {
   margin-top: 5px;
   width: 99%;
-  min-height:89vh;
+  min-height: 89vh;
   margin-inline: auto;
   padding: 4px;
   background-color: #dde2e8;
@@ -27,7 +52,6 @@ input{
 
 .flex {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -35,14 +59,15 @@ input{
   border: 2px solid #989a9c5c;
   border-radius: 4px;
   padding: 6px;
-  background-color: #4997ef;
+  background-color: var(--primary);
   cursor: pointer;
 }
 
-.btn:hover{
+.btn:hover {
   opacity: 0.8;
 }
-.btn:active{
+
+.btn:active {
   opacity: 0.6;
 }
 
@@ -52,7 +77,7 @@ input{
 /*  XXXX   */
 
 .sub-container {
-  /* justify-content: space-around; */
+  justify-content: space-around;
   gap: 40px;
   background-color: #ccd4dd;
 }
@@ -60,26 +85,36 @@ input{
 /* ---------------------------------------- */
 
 /*             Related to Header           */
+.header-container{
+    justify-content: flex-end;
+}
 .header {
   text-align: center;
   margin-bottom: 10px;
+  color: #3a0d2bf3;
+}
+.header-links-container{
+    width: 40%;
+    justify-content: flex-end;
+    gap: 5px; 
+    margin-right: 20px;
 }
 
 /* ---------------------------------------- */
 
 /*                   Relate to form      */
 .form-container {
-  background-color: #6096d44e;
+  color: rgba(48, 46, 46, 0.801);
+  font-weight: bold;
   display: flex;
   gap: 10px;
   flex-direction: column;
-  /* flex: ; */
-  width: 35%;
+  width: 25%;
   margin: 5px;
   padding: 20px;
 }
 
-.btn-container{
+.btn-container {
   text-align: center;
 }
 
@@ -88,12 +123,19 @@ input{
   font-weight: bold;
 }
 
+.logout-btn{
+  color: var(--c1);
+  background-color: white;
+  border: 1px solid;
+  border-color: var(--c1);
+
+}
 /* ------------------------------ */
 
 /* Realated to workout card */
 .card-container {
   padding: 10px;
-  border: 2px solid rgba(158, 150, 150, 0.688);
+  /* border: 2px solid rgba(158, 150, 150, 0.688); */
   border-radius: 4px;
   width: 40%;
   flex-direction: column;

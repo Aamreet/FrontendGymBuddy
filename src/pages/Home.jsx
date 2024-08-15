@@ -2,18 +2,29 @@ import { useEffect } from "react";
 import WorkoutsContainer from "../components/WorkoutsContainer";
 import WorkoutForm from "../components/WorkoutForm";
 import useWorkoutsContext from "../hooks/useWorkoutsContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const Home = () => {
+  console.log(" home started rendering...");
   const { dispatch } = useWorkoutsContext();
-
+  const { user } = useAuthContext();
+  console.log("t-1");
   useEffect(() => {
+    console.log(" t0");
     const getWorkouts = async () => {
       try {
-        const res = await fetch("/api/workouts");
+        const res = await fetch("/api/workouts", {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        });
+
+        const workouts = await res.json();
         if (!res.ok) {
           console.log("response is not correct");
         }
-        const workouts = await res.json();
+        console.log(workouts, " t1");
         dispatch({
           type: "SET_WORKOUTS",
           payload: workouts.Workouts,
@@ -24,8 +35,8 @@ const Home = () => {
     };
 
     getWorkouts();
-  }, []);
-
+  }, [dispatch, user]);
+  console.log("t1");
   return (
     <>
       <div className="container">
