@@ -36,7 +36,7 @@ const WorkoutsContextProvider = ({ children }) => {
   /*          workoutHandlers       */
   const addWorkoutHandler = async (title, load, reps) => {
     try {
-      const res = await fetch("/api/workouts", {
+      const res = await fetch(import.meta.env.VITE_BACKEND_URL+"/api/workouts", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -65,7 +65,7 @@ const WorkoutsContextProvider = ({ children }) => {
     // console.log(e.currentTarget.id);
     const _id = e.currentTarget.id;
     try {
-      const res = await fetch(`/api/workouts/${_id}`, {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/workouts/${_id}`, {
         method: "delete",
         headers: {
           'Authorization': `Bearer ${user.token}`

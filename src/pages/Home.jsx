@@ -13,7 +13,7 @@ const Home = () => {
     console.log(" t0");
     const getWorkouts = async () => {
       try {
-        const res = await fetch("/api/workouts", {
+        const res = await fetch(import.meta.env.VITE_BACKEND_URL+"/api/workouts", {
           method: "GET",
           headers: {
             Authorization: `Bearer ${user.token}`,

@@ -7,6 +7,7 @@ import { useAuthContext } from "./hooks/useAuthContext";
 
 function App() {
   const { user } = useAuthContext();
+  // console.log(process.env.REACT_APP_BACKEND_URL)
   return (
     <div className="App container">
       <BrowserRouter>

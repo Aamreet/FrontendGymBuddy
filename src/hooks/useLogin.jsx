@@ -9,7 +9,7 @@ export const useLogin = () => {
 
     const login =async (email, password)=>{
          setIsLoading(true);
-         const res = await fetch("/api/user/login",{
+         const res = await fetch(import.meta.env.VITE_BACKEND_URL+"/api/user/login",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
