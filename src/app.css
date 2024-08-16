@@ -77,9 +77,10 @@ a:active{
 /*  XXXX   */
 
 .sub-container {
-  justify-content: space-around;
-  gap: 40px;
+  padding: 10px;
+  justify-content: space-between;
   background-color: #ccd4dd;
+  flex-wrap: wrap;
 }
 
 /* ---------------------------------------- */
@@ -87,6 +88,7 @@ a:active{
 /*             Related to Header           */
 .header-container{
     justify-content: flex-end;
+    flex-wrap: wrap;
 }
 .header {
   text-align: center;
@@ -97,6 +99,7 @@ a:active{
     width: 40%;
     justify-content: flex-end;
     gap: 5px; 
+    flex-wrap: wrap;
     margin-right: 20px;
 }
 
@@ -104,13 +107,15 @@ a:active{
 
 /*                   Relate to form      */
 .form-container {
+  /* border: 1px solid red; */
   color: rgba(48, 46, 46, 0.801);
   font-weight: bold;
   display: flex;
   gap: 10px;
   flex-direction: column;
-  width: 25%;
-  margin: 5px;
+  /* width: 1fr; */
+  /* width:30%; */
+  /* margin: 5px; */
   padding: 20px;
 }
 
@@ -119,6 +124,7 @@ a:active{
 }
 
 .add-workout-btn {
+  font-size: 80%;
   width: 60%;
   font-weight: bold;
 }
@@ -134,10 +140,9 @@ a:active{
 
 /* Realated to workout card */
 .card-container {
+  /* border: 1px solid black; */
   padding: 10px;
-  /* border: 2px solid rgba(158, 150, 150, 0.688); */
   border-radius: 4px;
-  width: 40%;
   flex-direction: column;
   gap: 20px;
 }

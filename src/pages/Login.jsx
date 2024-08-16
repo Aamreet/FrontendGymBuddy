@@ -13,18 +13,24 @@ const Login = () => {
 
   return (
     <>
-      <form className="flex-item form-container" onSubmit={handleLoginSubmit}>
-        <label htmlFor="email">Email:</label>
-        <input ref={email} type="text" autoComplete="on"/>
-        <label htmlFor="password">password:</label>
-        <input ref={password} type="password" />
-        <div className="btn-container">
-          <button className="btn login-btn" type="submit" disabled={isLoading}>
-            Login
-          </button>
-        </div>
-        {error && <p className="error">{error}</p>}
-      </form>
+      <div className="flex items-center justify-center">
+        <form className="flex-item form-container" onSubmit={handleLoginSubmit}>
+          <label htmlFor="email">Email:</label>
+          <input ref={email} type="text" autoComplete="on" />
+          <label htmlFor="password">password:</label>
+          <input ref={password} type="password" />
+          <div className="btn-container">
+            <button
+              className="btn login-btn"
+              type="submit"
+              disabled={isLoading}
+            >
+              Login
+            </button>
+          </div>
+          {error && <p className="error">{error}</p>}
+        </form>
+      </div>
     </>
   );
 };

@@ -6,7 +6,7 @@ const WorkoutsContainer = () => {
    const{workouts}= useWorkoutsContext();
   return (
     <>
-     <div className=" flex flex-item card-container">
+     <div className=" flex flex-item  order-2 tab:order-1 card-container w-full tab:w-1/2">
             {workouts.length > 0 ? (
               workouts.map((workout, index) => {
                 return (

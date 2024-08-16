@@ -10,6 +10,7 @@ function App() {
   // console.log(process.env.REACT_APP_BACKEND_URL)
   return (
     <div className="App container">
+      {/* <h1 className="text-3xl font-bold underline">Hello world!</h1> */}
       <BrowserRouter>
         <Nav />
         <div className="pages">
@@ -18,8 +19,14 @@ function App() {
               path="/"
               element={user ? <Home /> : <Navigate to="/signup"></Navigate>}
             ></Route>
-            <Route path="/login" element={!user? <Login/>: <Navigate to="/"></Navigate>}></Route>
-            <Route path="/signup" element={!user? <Signup/>: <Navigate to="/"></Navigate>}></Route>
+            <Route
+              path="/login"
+              element={!user ? <Login /> : <Navigate to="/"></Navigate>}
+            ></Route>
+            <Route
+              path="/signup"
+              element={!user ? <Signup /> : <Navigate to="/"></Navigate>}
+            ></Route>
           </Routes>
         </div>
       </BrowserRouter>

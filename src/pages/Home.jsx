@@ -40,9 +40,9 @@ const Home = () => {
   return (
     <>
       <div className="container">
-        <div className="flex sub-container">
+        <div className="flex flex-wrap-reverse  sub-container ">
           <WorkoutsContainer></WorkoutsContainer>
-          <WorkoutForm></WorkoutForm>
+          <WorkoutForm ></WorkoutForm>
         </div>
       </div>
     </>

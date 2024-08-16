@@ -13,18 +13,31 @@ const Signup = () => {
 
   return (
     <>
-      <form className="flex-item form-container" onSubmit={handleSignupSubmit}>
-        <label htmlFor="email">Email:</label>
-        <input ref={email} type="text" />
-        <label htmlFor="password">password:</label>
-        <input ref={password} type="password" autoComplete="current-password" />
-        <div className="btn-container">
-          <button className="btn signup-btn" type="submit" disabled={isLoading}>
-            Signup
-          </button>
-        </div>
-        {error && <p className="error">{error}</p>}
-      </form>
+      <div className=" flex items-center justify-center">
+        <form
+          className="flex-item form-container"
+          onSubmit={handleSignupSubmit}
+        >
+          <label htmlFor="email">Email:</label>
+          <input ref={email} type="text" />
+          <label htmlFor="password">password:</label>
+          <input
+            ref={password}
+            type="password"
+            autoComplete="current-password"
+          />
+          <div className="btn-container">
+            <button
+              className="btn signup-btn"
+              type="submit"
+              disabled={isLoading}
+            >
+              Signup
+            </button>
+          </div>
+          {error && <p className="error">{error}</p>}
+        </form>
+      </div>
     </>
   );
 };
