@@ -3,14 +3,14 @@ import Home from "./pages/Home";
 import Nav from "./components/Nav";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Profile from "./pages/Profile";
 import { useAuthContext } from "./hooks/useAuthContext";
 
 function App() {
   const { user } = useAuthContext();
-  // console.log(process.env.REACT_APP_BACKEND_URL)
+
   return (
     <div className="App container">
-      {/* <h1 className="text-3xl font-bold underline">Hello world!</h1> */}
       <BrowserRouter>
         <Nav />
         <div className="pages">
@@ -26,6 +26,10 @@ function App() {
             <Route
               path="/signup"
               element={!user ? <Signup /> : <Navigate to="/"></Navigate>}
+            ></Route>
+            <Route
+              path="/profile"
+              element={user ? <Profile /> : <Navigate to="/signup"></Navigate>}
             ></Route>
           </Routes>
         </div>

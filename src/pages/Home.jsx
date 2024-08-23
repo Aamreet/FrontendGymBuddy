@@ -4,21 +4,25 @@ import WorkoutForm from "../components/WorkoutForm";
 import useWorkoutsContext from "../hooks/useWorkoutsContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 
+
 const Home = () => {
   console.log(" home started rendering...");
   const { dispatch } = useWorkoutsContext();
   const { user } = useAuthContext();
   console.log("t-1");
   useEffect(() => {
-    console.log(" t0");
+    console.log("t-0");
     const getWorkouts = async () => {
       try {
-        const res = await fetch(import.meta.env.VITE_BACKEND_URL+"/api/workouts", {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${user.token}`,
-          },
-        });
+        const res = await fetch(
+          import.meta.env.VITE_BACKEND_URL + "/api/workouts",
+          {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${user.token}`,
+            },
+          }
+        );
 
         const workouts = await res.json();
         if (!res.ok) {
@@ -39,10 +43,10 @@ const Home = () => {
   console.log("t1");
   return (
     <>
-      <div className="container">
+      <div>
         <div className="flex flex-wrap-reverse  sub-container ">
           <WorkoutsContainer></WorkoutsContainer>
-          <WorkoutForm ></WorkoutForm>
+          <WorkoutForm></WorkoutForm>
         </div>
       </div>
     </>

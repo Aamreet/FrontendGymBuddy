@@ -30,7 +30,6 @@ const AuthContextProvider = ({ children }) => {
       });
     }
   }, []);
-  console.log(state);
   return (
     <>
       <AuthContext.Provider

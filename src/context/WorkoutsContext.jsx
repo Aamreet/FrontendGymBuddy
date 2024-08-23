@@ -62,7 +62,6 @@ const WorkoutsContextProvider = ({ children }) => {
   };
 
   const deleteWorkoutHandler = async (e) => {
-    // console.log(e.currentTarget.id);
     const _id = e.currentTarget.id;
     try {
       const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/workouts/${_id}`, {
