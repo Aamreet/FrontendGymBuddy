@@ -4,7 +4,6 @@ import { useAuthContext } from "../hooks/useAuthContext";
 export const WorkoutsContext = createContext();
 
 const workoutsReducer = (state, action) => {
-  // console.log(action.type);
   switch (action.type) {
     case "SET_WORKOUTS":
       return {

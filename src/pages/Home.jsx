@@ -11,7 +11,7 @@ const Home = () => {
   const { user } = useAuthContext();
   console.log("t-1");
   useEffect(() => {
-    console.log("t-0");
+    console.log("t-2");
     const getWorkouts = async () => {
       try {
         const res = await fetch(
@@ -23,12 +23,12 @@ const Home = () => {
             },
           }
         );
-
+        console.log(res);
         const workouts = await res.json();
         if (!res.ok) {
           console.log("response is not correct");
         }
-        console.log(workouts, " t1");
+        console.log(workouts, " t-3");
         dispatch({
           type: "SET_WORKOUTS",
           payload: workouts.Workouts,
@@ -40,7 +40,7 @@ const Home = () => {
 
     getWorkouts();
   }, [dispatch, user]);
-  console.log("t1");
+  console.log("t-4");
   return (
     <>
       <div>
